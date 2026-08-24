@@ -161,10 +161,10 @@ export default function Home() {
           <span style={{ color: COLORS.amber }}>Before your users do.</span>
         </h1>
 
-        <p className="mt-6 max-w-xl text-lg" style={{ color: COLORS.muted }}>
+        {/* <p className="mt-6 max-w-xl text-lg" style={{ color: COLORS.muted }}>
           Signal checks every endpoint on a schedule you set, tracks latency over time,
           and pages the right person the second something looks wrong.
-        </p>
+        </p> */}
 
         <div className="mt-8 flex flex-wrap items-center gap-4">
           <button
