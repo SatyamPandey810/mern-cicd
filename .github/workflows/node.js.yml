@@ -12,6 +12,11 @@ jobs:
       - name: Fix workspace permissions
         run: sudo chown -R $USER:$USER $GITHUB_WORKSPACE || true
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' 
+
       - name: Checkout code
         uses: actions/checkout@v4
         with:
