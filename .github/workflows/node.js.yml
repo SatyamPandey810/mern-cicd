@@ -1,3 +1,4 @@
+# .github/workflows/deploy.yml
 name: Deploy MERN (Self-Hosted Runner)
 
 on:
@@ -9,15 +10,7 @@ jobs:
   deploy:
     runs-on: self-hosted
     steps:
-      - name: Fix workspace permissions
-        run: sudo chown -R $USER:$USER $GITHUB_WORKSPACE || true
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20' 
-
-      - name: Checkout code
+      - name: Checkout code (no clean, just pull)
         uses: actions/checkout@v4
         with:
           clean: false
@@ -25,7 +18,7 @@ jobs:
       - name: Install & Build Frontend
         working-directory: ./frontend
         run: |
-          npm ci --prefer-offline --no-audit --no-fund --progress=false
+          npm ci
           npm run build
 
       - name: Install Backend dependencies
